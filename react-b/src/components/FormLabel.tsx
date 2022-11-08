@@ -7,8 +7,8 @@ export interface FormLabelSchema {
 const FormLabel = (props: FormLabelSchema) => {
   const classes = useStyles()
   return (
-    <div className={classes.formLabelBlock}>
-      <span className={classes.formLabel}>{props.label}</span>
+    <div className={classes.mr10}>
+      <span>{props.label}</span>
     </div>
   )
 }

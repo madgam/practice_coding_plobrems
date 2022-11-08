@@ -19,11 +19,11 @@ const StudyList = (props: StudyListSchema) => {
         <span className={classes.studyListLabel}>{t.SUBJECTS}</span>
         <span className={classes.studyListLabel}>{t.STUDY_TIME}</span>
       </div>
-      <div className={classes.hr} />
+      <div className={`${classes.hr} ${classes.m10}`} />
       {props.items.map((study, i) => {
         return (
           <div key={i}>
-            {i > 0 && <div className={classes.hr} />}
+            {i > 0 && <div className={`${classes.hr} ${classes.m10}`} />}
             <div className={`${classes.flex} ${classes.m10}`}>
               <span className={classes.studyListItems}>{study.name}</span>
               <span className={classes.studyListItems}>

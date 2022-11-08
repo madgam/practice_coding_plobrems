@@ -60,51 +60,63 @@ const App = () => {
   }
 
   return (
-    <div className={classes.common}>
-      <div className={classes.form}>
+    <div className={`${classes.common} ${classes.m_auto}`}>
+      <div
+        className={`${classes.jc_center} ${classes.ai_center} ${classes.flex}`}
+      >
         {/* 科目 */}
-        <FormLabel label={t.SUBJECTS} />
-        <Select
-          className={classes.select}
-          value={formValue.key}
-          onChange={handleSelect}
+        <div
+          className={`${classes.ai_center} ${classes.flex} ${classes.m0_10}`}
         >
-          {SUBJECTS.map((item, i) => (
-            <MenuItem value={item.key} key={i}>
-              {item.label}
-            </MenuItem>
-          ))}
-        </Select>
+          <FormLabel label={t.SUBJECTS} />
+          <Select
+            className={classes.select}
+            value={formValue.key}
+            onChange={handleSelect}
+            size={'small'}
+          >
+            {SUBJECTS.map((item, i) => (
+              <MenuItem value={item.key} key={i}>
+                {item.label}
+              </MenuItem>
+            ))}
+          </Select>
+        </div>
 
         {/* 勉強時間(分) */}
-        <FormLabel label={t.STUDY_TIME} />
-        <div>
-          <TextField
-            className={classes.textarea}
-            variant={'outlined'}
-            id={'outlined-error'}
-            type={'number'}
-            value={formValue.time}
-            onChange={handleInput}
-            onKeyPress={(e) => {
-              // キーボードのEnterで登録を発火させる
-              if (e.key === 'Enter') {
-                handleSubmit()
-              }
-            }}
-            sx={{
-              '& .MuiOutlinedInput-root': {
-                '& fieldset': {
-                  borderColor: hasError ? '#f00' : '#ccc',
-                  borderWidth: hasError ? 3 : 1,
+        <div
+          className={`${classes.ai_center} ${classes.flex} ${classes.m0_10}`}
+        >
+          <FormLabel label={t.STUDY_TIME} />
+          <div>
+            <TextField
+              className={classes.textarea}
+              variant={'outlined'}
+              id={'outlined-error'}
+              type={'number'}
+              value={formValue.time}
+              onChange={handleInput}
+              onKeyPress={(e) => {
+                // キーボードのEnterで登録を発火させる
+                if (e.key === 'Enter') {
+                  handleSubmit()
+                }
+              }}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                    borderColor: hasError ? '#f00' : '#ccc',
+                    borderWidth: hasError ? 3 : 1,
+                  },
                 },
-              },
-            }}
-          />
+              }}
+              size={'small'}
+            />
+          </div>
         </div>
 
         {/* 送信ボタン */}
-        <div className={classes.p10}>
+        <div>
           <Button type={'submit'} variant={'contained'} onClick={handleSubmit}>
             送信
           </Button>
@@ -116,7 +128,7 @@ const App = () => {
 
       {/* 勉強合計時間 */}
       <div className={`${classes.studySum} ${classes.m20}`}>
-        <span>合計時間</span>
+        <span className={classes.mr10}>合計時間</span>
         <span className={classes.studySumTime}>
           {time > 59 && `${Math.floor(time / 60)}${t.TIME_HOURS}`}
           {time % 60}

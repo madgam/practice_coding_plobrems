@@ -3,30 +3,37 @@ import { makeStyles } from '@material-ui/core/styles'
 export const useStyles = makeStyles({
   common: {
     width: '60%',
-    margin: '0 auto',
     fontSize: 20,
+    backgroundColor: '#fff',
   },
   flex: {
     display: 'flex',
   },
   form: {
-    display: 'flex',
-    margin: '20px',
     justifyContent: 'center',
   },
   select: {
-    width: '200px',
+    width: 200,
   },
   textarea: {
-    width: '80px',
+    width: 80,
+  },
+  ai_center: {
+    alignItems: 'center',
+  },
+  jc_center: {
+    justifyContent: 'center',
   },
 
   // margin
+  m_auto: {
+    margin: '0 auto',
+  },
   m10: {
-    margin: '10px',
+    margin: 10,
   },
   m20: {
-    margin: '20px',
+    margin: 20,
   },
   m0_10: {
     margin: '0px 10px',
@@ -34,13 +41,28 @@ export const useStyles = makeStyles({
   m10_0: {
     margin: '10px 0px',
   },
+  ml10: {
+    marginLeft: 10,
+  },
+  ml20: {
+    marginLeft: 20,
+  },
+  mr10: {
+    marginRight: 10,
+  },
+  mr20: {
+    marginRight: 20,
+  },
 
   // padding
+  p5: {
+    padding: 5,
+  },
   p10: {
-    padding: '10px',
+    padding: 10,
   },
   p20: {
-    padding: '20px',
+    padding: 20,
   },
   p0_10: {
     padding: '0px 10px',
@@ -52,28 +74,18 @@ export const useStyles = makeStyles({
     padding: '20px 10px',
   },
 
-  // form
-  formLabelBlock: {
-    margin: '0px 10px',
-  },
-  formLabel: {
-    verticalAlign: '-webkit-baseline-middle',
-  },
-
   // studySum
   studySum: {
     textAlign: 'right',
   },
   studySumTime: {
     fontSize: 28,
-    marginLeft: 10,
     fontWeight: 'bold',
     color: 'gray',
   },
 
   // studyList
   hr: {
-    margin: '10px',
     borderBottom: '2px solid #a9a9a9',
   },
   studyListItems: {
@@ -89,9 +101,6 @@ export const useStyles = makeStyles({
 
   // error messages
   error: {
-    color: 'red',
-  },
-  notchedOutline: {
-    border: '1px solid red !important',
+    color: '#f00',
   },
 })
